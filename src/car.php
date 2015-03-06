@@ -8,7 +8,7 @@
         private $img;
         private $mileage;
 
-        function __construct($make, $price, $year, $img, $mileage)
+        function __construct($make, $price, $year=1990, $img="none.png", $mileage="13,000")
         {
             $this->make = $make;
             $this->price = $price;
@@ -57,6 +57,12 @@
         function setImg($new_img)
         {
             $this->img = $new_img;
+        }
+        function save(){
+            array_push($_SESSION['new_session_array'], $this);
+        }
+        static function getAll(){
+            return $_SESSION['new_session_array'];
         }
 
     }

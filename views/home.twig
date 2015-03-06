@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>Car Dealership</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+</head>
+<body>
+<h1>Car Dealership Page</h1>
+
+    {% for car in array_of_all_cars %}
+    <li>{{car.getMake}}</li>
+    {% endfor %}
+
+    <div class = "container">
+        <h2>Hi, post a new car</h2>
+        <form action ="/post_new_car" method='post'>
+            <div class = "form-group">
+                <label for = "make">Enter the model</label>
+                <input id ="make" name ="make" class="form-control" type="text">
+            </div>
+            <div class = "form-group">
+                <label for = "price">Enter your price</label>
+                <input id ="price" name ="price" class="form-control" type="text">
+            </div>
+            <button type="submit" class="btn">Go!</button>
+        </form>
+    </div>
+
+<!--         <form action = "/add_new_car_to_array" method='post'>
+    <div class = "form-group">
+        <label for = "max_mileage">Enter the max_mileage</label>
+        <input id ="max_mileage" name ="max_mileage" class="form-control" type="text">
+    </div>
+    <div class = "form-group">
+        <label for = "max_max_price">Enter your max max_price</label>
+        <input id ="max_price" name ="max_price" class="form-control" type="text">
+    </div>
+    <button type="submit" class="btn">Go!</button>
+</form> -->
+
+</body>
+</html>
